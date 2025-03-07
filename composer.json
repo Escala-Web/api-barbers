@@ -2,7 +2,7 @@
     "name": "suporte-4/api-barbers",
     "autoload": {
         "psr-4": {
-            "Suporte4\\ApiBarbers\\": "src/"
+            "Src\\": "src/"
         }
     },
     "authors": [
@@ -11,5 +11,7 @@
             "email": "suporte3@escalaweb.com.br"
         }
     ],
-    "require": {}
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
 }
