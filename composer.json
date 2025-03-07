@@ -1,0 +1,15 @@
+{
+    "name": "suporte-4/api-barbers",
+    "autoload": {
+        "psr-4": {
+            "Suporte4\\ApiBarbers\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bruno",
+            "email": "suporte3@escalaweb.com.br"
+        }
+    ],
+    "require": {}
+}
