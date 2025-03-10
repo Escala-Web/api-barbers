@@ -26,10 +26,10 @@ class EmailService
             $mail = new PHPMailer(true);
             try {
                 $mail->isSMTP();
-                $mail->Host = 'smtp.escalaweb.com.br';
+                $mail->Host = 'smtp.liderancabarbers.com.br';
                 $mail->SMTPAuth = true;
-                $mail->Username = "teste@escalaweb.com.br";
-                $mail->Password = "Escalaweb$17";;
+                $mail->Username = "google@liderancabarbers.com.br";
+                $mail->Password = "Lide#goo123";;
                 $mail->SMTPSecure = false;
 		        $mail->SMTPAutoTLS = false;
                 $mail->Port = 587;

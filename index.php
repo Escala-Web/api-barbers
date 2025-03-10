@@ -2,10 +2,11 @@
 
 use Src\Http\Response;
 use Src\Controller\EmailController;
+use Src\Controller\IpController;
 
 require_once "./vendor/autoload.php";
 
-// header("Content-Type: application/json");
+header("Content-Type: application/json");
 
 $method = $_SERVER['REQUEST_METHOD'];
 
@@ -13,7 +14,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-if($_SERVER['REQUEST_METHOD'] == 'OPTIONS'){
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     http_response_code(200);
     exit;
 }
@@ -32,14 +33,11 @@ if (!isset($_GET['action'])) {
     http_response_code(404);
     exit;
 }
+$data = json_decode(file_get_contents('php://input'), true);
 
 if ($path === 'email') {
-    if ($method === 'GET') {
-        echo json_encode("Metodo Get");
-    } elseif ($method === 'POST') {
-        $data = json_decode(file_get_contents('php://input'), true);
-        
-        switch($action){
+    if ($method === 'POST') {
+        switch ($action) {
             case "send":
                 EmailController::send($data);
             break;
@@ -49,12 +47,34 @@ if ($path === 'email') {
                     "message" => "Ação não encontrada.",
                 ], 400);
         }
-
     } else {
-        http_response_code(405);
-        echo json_encode(['error' => 'Método não permitido']);
+        Response::json([
+            "success" => false,
+            "message" => "Método não permitido"
+        ], 405);
     }
 } else if ($path == 'cookie') {
+} else if ($path === 'ip') {
+    if ($method === 'POST') {
+        switch ($action) {
+            case "register":
+                IpController::create($data);
+            break;
+            case "updatePolicy":
+                IpController::updatePolicy($data);
+            break;
+            default:
+                Response::json([
+                    "success" => false,
+                    "message" => "Método não permitido"
+                ], 405);
+        }
+    } else {
+        Response::json([
+            "success" => false,
+            "message" => "Método não permitido"
+        ], 405);
+    }
 } else {
     http_response_code(404);
     echo json_encode(['error' => 'Rota não encontrada']);

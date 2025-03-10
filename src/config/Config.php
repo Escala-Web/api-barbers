@@ -5,16 +5,20 @@ namespace Src\Config;
 class Config
 {
     const DOMAIN = 'liderancabarbers.com.br';
-    const HOST = 'escalaweb.com.br';
+    const HOST = 'liderancabarbers.com.br';
 
-    const HOST_DB = 'localhost';
-    const DB_NAME = 'liderancabarbers';
-    const DB_USER = 'root';
-    const DB_PASSWORD = '';
+    const HOST_DB = 'mysql.liderancabarbers.com.br';
+    // const HOST_DB = 'localhost';
+    const DB_NAME = 'liderancabarbe';
+    // const DB_NAME = 'liderancabarbers';
+    const DB_USER = 'liderancabarbe';
+    // const DB_USER = 'root';
+    const DB_PASSWORD = 'JC6qbSz';
+    // const DB_PASSWORD = '';
 
-    const USERNAME_EMAIL = "teste@escalaweb.com.br";
-    const PASSWORD_EMAIL = "Escalaweb$17";
-    const MAIN_EMAIL = 'teste@escalaweb.com.br';
+    const USERNAME_EMAIL = "google@liderancabarbers.com.br";
+    const PASSWORD_EMAIL = "Lide#goo123";
+    const MAIN_EMAIL = 'agendamento@liderancabarbers.com.br';
 
 
     public static function get($key)
