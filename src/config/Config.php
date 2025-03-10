@@ -13,11 +13,11 @@ class Config
     // const DB_NAME = 'liderancabarbers';
     const DB_USER = 'liderancabarbe';
     // const DB_USER = 'root';
-    const DB_PASSWORD = 'JC6qbSz';
+    const DB_PASSWORD = 'senha';
     // const DB_PASSWORD = '';
 
     const USERNAME_EMAIL = "google@liderancabarbers.com.br";
-    const PASSWORD_EMAIL = "Lide#goo123";
+    const PASSWORD_EMAIL = "senha";
     const MAIN_EMAIL = 'agendamento@liderancabarbers.com.br';
 
 
